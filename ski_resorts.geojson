@@ -1,0 +1,157 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "49 Degrees North Mountain Resort",
+          "ski_slopes": "68 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-117.700, 48.400],
+              [-117.500, 48.300],
+              [-117.300, 48.400],
+              [-117.500, 48.500],
+              [-117.700, 48.400]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Crystal Mountain",
+          "ski_slopes": "50 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-121.650, 46.980],
+              [-121.450, 46.880],
+              [-121.250, 46.990],
+              [-121.450, 47.080],
+              [-121.650, 46.980]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "",
+          "ski_slopes": "39 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-121.250, 47.850],
+              [-121.050, 47.750],
+              [-120.850, 47.850],
+              [-121.050, 47.950],
+              [-121.250, 47.850]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "",
+          "ski_slopes": "30 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-121.550, 46.700],
+              [-121.350, 46.600],
+              [-121.150, 46.700],
+              [-121.350, 46.800],
+              [-121.550, 46.700]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "",
+          "ski_slopes": "27.9 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-121.550, 47.500],
+              [-121.350, 47.400],
+              [-121.150, 47.500],
+              [-121.350, 47.600],
+              [-121.550, 47.500]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Wenatchee - Mission Ridge",
+          "ski_slopes": "36 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-120.500, 47.400],
+              [-120.300, 47.300],
+              [-120.100, 47.400],
+              [-120.300, 47.500],
+              [-120.500, 47.400]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Mt Spokane",
+          "ski_slopes": "26 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-117.250, 48.000],
+              [-117.050, 47.900],
+              [-116.850, 48.000],
+              [-117.050, 48.100],
+              [-117.250, 48.000]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "",
+          "ski_slopes": "9.6 km"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-121.430, 47.445],
+              [-121.425, 47.440],
+              [-121.420, 47.445],
+              [-121.425, 47.450],
+              [-121.430, 47.445]
+            ]
+          ]
+        }
+      }
+    ]
+  }
