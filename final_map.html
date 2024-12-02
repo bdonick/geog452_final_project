@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Interactive Snowfall Map of Washington Passes</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+   <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <style>
+       body { margin: 0; padding: 0; }
+       #map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: 1; } /* Ensure map is behind other elements */
+       #slider { position: absolute; bottom: 50px; left: 50px; width: 300px; z-index: 10; }
+       #year-display { position: absolute; bottom: 90px; left: 50px; background-color: white; padding: 5px; font-size: 16px; z-index: 10; }
+       #elevation-legend, #color-legend, #title-container, #author-container, #description-container {
+           position: absolute;
+           left: 50px;
+           background-color: rgba(255, 255, 255, 0.8);
+           padding: 10px;
+           border-radius: 5px;
+           font-size: 14px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+           z-index: 10; /* Ensure these appear above the map */
+       }
+
+
+       #title-container { top: 20px; font-size: 20px; font-weight: bold; z-index: 10; }
+       #description-container { top: 60px; max-width: 400px; z-index: 10; }
+       #author-container { top: 140px; font-style: italic; z-index: 10; }
+
+
+       #color-legend {
+           bottom: 125px;
+           z-index: 10; /* Ensure it is above the map */
+       }
+
+
+       #elevation-legend {
+           bottom: 350px;
+           z-index: 10; /* Ensure it is above the map */
+       }
+       .color-box {
+           display: inline-block;
+           width: 20px;
+           height: 20px;
+           margin-right: 5px;
+       }
+       #chart-container {
+           position: absolute;
+           top: 10px;
+           right: 10px;
+           width: 300px;
+           height: 400px;
+           background-color: white;
+           border-radius: 5px;
+           padding: 10px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+           z-index: 10; /* Ensure chart appears above map */
+       }
+
+
+       #ski-resort-legend {
+           position: absolute;
+           bottom: 20px; /* Move to bottom of the screen */
+           right: 20px; /* Positioned on the right side */
+           background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+           padding: 10px;
+           border-radius: 5px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+           font-size: 14px;
+           z-index: 10; /* Ensure it appears above the map */
+           max-width: 300px; /* Prevent the text from being too wide */
+       }
+
+
+       .color-box {
+           display: inline-block;
+           width: 20px;
+           height: 20px;
+           margin-right: 5px;
+           border: 1px solid #000; /* Optional border for better visibility */
+       }
+   </style>
+</head>
+<body>
+
+
+<!-- Title -->
+<div id="title-container">
+   Interactive Snowfall Map of Washington Passes
+</div>
+
+
+<!-- Description -->
+<div id="description-container">
+   This map visualizes annual snowfall data for major mountain passes in Washington State. Explore data by year and learn about snowfall patterns and pass elevations through interactive layers and legends.
+</div>
+
+
+<!-- Author -->
+<div id="author-container">
+   Author: [Ben Donick and Tristan Farrell]
+</div>
+
+
+<div id="ski-resort-legend">
+   <div class="legend-item">
+       <span class="color-box" style="background-color: #ff69b4;"></span> Ski Resorts (unlabeled resorts are the same name as their local mountain pass)
+   </div>
+</div>
+
+
+   <div id="map"></div>
+<div id="color-legend">
+   <h3>Snowfall Color Scale</h3>
+   <div class="legend-item"><span class="color-box" style="background-color: #d4f4a3;"></span> 0-100 inches</div>
+   <div class="legend-item"><span class="color-box" style="background-color: #a2d46d;"></span> 101-200 inches</div>
+   <div class="legend-item"><span class="color-box" style="background-color: #64a837;"></span> 201-300 inches</div>
+   <div class="legend-item"><span class="color-box" style="background-color: #357a7d;"></span> 301-400 inches</div>
+   <div class="legend-item"><span class="color-box" style="background-color: #104f7a;"></span> 401+ inches</div>
+</div>
+<div id="elevation-legend">
+   <h3>Elevation of Passes</h3>
+   <p><strong>Blewett Pass</strong>: 4,102 feet </p>
+   <p><strong>Sherman Pass</strong>: 5,575 feet </p>
+   <p><strong>Stevens Pass</strong>: 4,061 feet </p>
+   <p><strong>White Pass</strong>: 4,500 feet  </p>
+   <p><strong>Snoqualmie Pass</strong>: 3,022 feet </p>
+</div>
+<input id="slider" type="range" min="2013" max="2024" step="1" value="2013">
+<div id="year-display">Year: <span id="year-value">2013</span></div>
+<div id="chart-container" style="position: absolute; top: 10px; right: 10px; width: 300px; height: 300px; background-color: white; border-radius: 5px; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+   <canvas id="snowfall-chart"></canvas>
+</div>
+
+
+<script>
+   mapboxgl.accessToken = 'pk.eyJ1IjoiYmRvbmljayIsImEiOiJjbTFqdHU1ODQwMmJwMmpvcDZvOGhiN2d4In0.IcRTcqQZuMLru5emMpFI3w';
+   const map = new mapboxgl.Map({
+       container: 'map',
+       style: 'mapbox://styles/mapbox/dark-v10',
+       center: [-120.895, 47.5],
+       zoom: 7,
+       pitch: 45,
+       bearing: 0
+   });
+
+
+   let snowfallChart;
+
+
+   // Function to create or update the bar chart
+   function updateChart(data) {
+       const chartContainer = document.getElementById('snowfall-chart');
+
+
+       // Extract data for the chart
+       const labels = data.map(d => d.pass_name);
+       const snowfallValues = data.map(d => d.snowfall);
+
+
+       // If the chart already exists, update it
+       if (snowfallChart) {
+           snowfallChart.data.labels = labels;
+           snowfallChart.data.datasets[0].data = snowfallValues;
+           snowfallChart.update();
+       } else {
+           // Create a new chart
+           snowfallChart = new Chart(chartContainer, {
+               type: 'bar',
+               data: {
+                   labels: labels,
+                   datasets: [{
+                       label: 'Snowfall (inches)',
+                       data: snowfallValues,
+                       backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                       borderColor: 'rgba(54, 162, 235, 1)',
+                       borderWidth: 1
+                   }]
+               },
+               options: {
+                   responsive: true,
+                   maintainAspectRatio: false,
+                   scales: {
+                       y: {
+                           beginAtZero: true
+                       }
+                   }
+               }
+           });
+       }
+   }
+  
+   map.on('load', function () {
+       // Hide labels and other map symbols for a cleaner view
+       const layers = map.getStyle().layers;
+       for (let i = 0; i < layers.length; i++) {
+           if (layers[i].type === 'symbol') {
+               map.setLayoutProperty(layers[i].id, 'visibility', 'none');
+           }
+       }
+
+
+       // Add a 3D terrain source with an increased exaggeration level for better visualization
+       map.addSource('mapbox-dem', {
+           'type': 'raster-dem',
+           'url': 'mapbox://mapbox.terrain-rgb'
+       });
+       map.setTerrain({ source: 'mapbox-dem', exaggeration: 2.5 });
+
+
+       // Add a hillshade layer for elevation shading
+       map.addLayer({
+           id: 'hillshade-layer',
+           type: 'hillshade',
+           source: 'mapbox-dem',
+           paint: {
+               'hillshade-shadow-color': '#000000',
+               'hillshade-highlight-color': '#ffffff',
+               'hillshade-accent-color': '#888888'
+           }
+       });
+
+
+       // Load the snowfall data from the GeoJSON file
+       map.addSource('snowfall-data', {
+           type: 'geojson',
+           data: 'snowfall_data.geojson'
+       });
+
+
+       // Add a circle layer for displaying passes as points
+       map.addLayer({
+           id: 'snowfall-layer',
+           type: 'circle',
+           source: 'snowfall-data',
+           paint: {
+               'circle-radius': 15,
+               'circle-color': [
+                   'interpolate',
+                   ['linear'],
+                   ['get', 'snowfall'],
+                   0, '#d4f4a3',  // Light green for low snowfall
+                   100, '#a2d46d', // Medium green
+                   200, '#64a837', // Darker green
+                   300, '#357a7d', // Teal
+                   400, '#104f7a'  // Dark blue for high snowfall
+               ],
+               'circle-stroke-width': 1,
+               'circle-stroke-color': '#ffffff'
+           }
+       });
+
+
+       map.addLayer({
+          id: 'pass-labels',
+          type: 'symbol',
+          source: 'snowfall-data',
+          layout: {
+              'text-field': ['get', 'pass_name'],
+              'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+              'text-size': 14,
+              'text-offset': [0, 1.5], // Position the label above the point
+              'text-anchor': 'top'
+          },
+          paint: {
+              'text-color': '#ffffff', // White text
+              'text-halo-color': '#000000', // Black outline for better visibility
+              'text-halo-width': 1
+          }
+      });
+
+
+      map.addSource('ski-resorts', {
+          type: 'geojson',
+          data: 'ski_resorts.geojson'
+      });
+
+
+      map.addLayer({
+           id: 'ski-resort-layer',
+           type: 'fill',
+           source: 'ski-resorts',
+           paint: {
+               'fill-color': '#ff69b4', // Light pink color for ski resorts
+               'fill-opacity': 0.6, // Semi-transparent
+               'fill-outline-color': '#ff1493' // Dark pink border
+           }
+       });
+
+
+       map.addLayer({
+           id: 'ski-resort-labels',
+           type: 'symbol',
+           source: 'ski-resorts',
+           layout: {
+               'text-field': ['get', 'name'], // Display the resort name
+               'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
+               'text-size': 12,
+               'text-anchor': 'center' // Default anchor
+           },
+           paint: {
+               'text-color': '#000000', // Black text
+               'text-halo-color': '#ffffff', // White halo for visibility
+               'text-halo-width': 1
+           }
+       });
+
+
+      document.getElementById('slider').addEventListener('input', function (e) {
+       const year = e.target.value;
+       const formattedYear = `${year}-${parseInt(year) + 1}`;
+       document.getElementById('year-value').textContent = formattedYear;
+
+
+       // Filter features by year
+       map.setFilter('snowfall-layer', ['==', ['get', 'year'], formattedYear]);
+
+
+       const rawData = map.querySourceFeatures('snowfall-data', {
+           filter: ['==', ['get', 'year'], formattedYear]
+       });
+
+
+       // Deduplicate data by pass_name
+       const uniqueData = {};
+       rawData.forEach(feature => {
+           const passName = feature.properties.pass_name;
+           if (!uniqueData[passName]) {
+               uniqueData[passName] = {
+                   pass_name: passName,
+                   snowfall: feature.properties.snowfall,
+                   geometry: feature.geometry
+               };
+           }
+       });
+
+
+   // Convert the unique data object to an array for the chart
+   const chartData = Object.values(uniqueData);
+
+
+   // Update the chart with deduplicated data
+   updateChart(chartData);
+});
+
+
+       // Create a pop-up for hover events
+       let popup = new mapboxgl.Popup({
+           closeButton: false,
+           closeOnClick: false
+       });
+
+
+       // Add hover event to show pop-up with pass name and snowfall
+       map.on('mouseenter', 'snowfall-layer', function (e) {
+           map.getCanvas().style.cursor = 'pointer';
+
+
+           const coordinates = e.features[0].geometry.coordinates.slice();
+           const properties = e.features[0].properties;
+           const description = `<strong>${properties.pass_name}</strong><br>Total Snowfall: ${properties.snowfall} inches`;
+
+
+           // Set the pop-up content and position
+           popup.setLngLat(coordinates).setHTML(description).addTo(map);
+       });
+
+
+       map.on('mouseleave', 'snowfall-layer', function () {
+           map.getCanvas().style.cursor = '';
+           popup.remove(); // Remove the pop-up when not hovering
+       });
+
+
+   
+       document.getElementById('slider').addEventListener('input', function (e) {
+           const year = e.target.value;
+           const formattedYear = `${year}-${parseInt(year) + 1}`; // Format as "2013-2014"
+           document.getElementById('year-value').textContent = formattedYear;
+
+
+                      map.setFilter('snowfall-layer', ['==', ['get', 'year'], formattedYear]);
+       });
+   });
+</script>
+
+
+</body>
+</html>
