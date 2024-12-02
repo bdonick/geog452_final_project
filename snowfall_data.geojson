@@ -1,0 +1,830 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2013-2014",
+                "snowfall": 292
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2013-2014",
+                "snowfall": 471
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2013-2014",
+                "snowfall": 215
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2013-2014",
+                "snowfall": 54
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2013-2014",
+                "snowfall": 110
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2014-2015",
+                "snowfall": 104
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2014-2015",
+                "snowfall": 200
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2014-2015",
+                "snowfall": 93
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2014-2015",
+                "snowfall": 37
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2014-2015",
+                "snowfall": 49
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2015-2016",
+                "snowfall": 402
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2015-2016",
+                "snowfall": 450
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2015-2016",
+                "snowfall": 296
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2015-2016",
+                "snowfall": 122
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2015-2016",
+                "snowfall": 129
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2016-2017",
+                "snowfall": 405
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2016-2017",
+                "snowfall": 470
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2016-2017",
+                "snowfall": 313
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2016-2017",
+                "snowfall": 112
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2016-2017",
+                "snowfall": 140
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2017-2018",
+                "snowfall": 446
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2017-2018",
+                "snowfall": 525
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2017-2018",
+                "snowfall": 318
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2017-2018",
+                "snowfall": 152
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2017-2018",
+                "snowfall": 140
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2018-2019",
+                "snowfall": 304
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2018-2019",
+                "snowfall": 335
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2018-2019",
+                "snowfall": 223
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2018-2019",
+                "snowfall": 86
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2018-2019",
+                "snowfall": 121
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2019-2020",
+                "snowfall": 345
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2019-2020",
+                "snowfall": 497
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2019-2020",
+                "snowfall": 298
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2019-2020",
+                "snowfall": 82
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2019-2020",
+                "snowfall": 144
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2020-2021",
+                "snowfall": 464
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2020-2021",
+                "snowfall": 527
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2020-2021",
+                "snowfall": 265
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2020-2021",
+                "snowfall": 113
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2020-2021",
+                "snowfall": 124
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2021-2022",
+                "snowfall": 446
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2021-2022",
+                "snowfall": 530
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2021-2022",
+                "snowfall": 238
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2021-2022",
+                "snowfall": 136
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2021-2022",
+                "snowfall": 149
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2022-2023",
+                "snowfall": 378
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2022-2023",
+                "snowfall": 391
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2022-2023",
+                "snowfall": 282
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2022-2023",
+                "snowfall": 153
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2022-2023",
+                "snowfall": 118
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.4132,
+                    47.4105
+                ]
+            },
+            "properties": {
+                "pass_name": "Snoqualmie Pass",
+                "year": "2023-2024",
+                "snowfall": 280
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.0893,
+                    47.7445
+                ]
+            },
+            "properties": {
+                "pass_name": "Stevens Pass",
+                "year": "2023-2024",
+                "snowfall": 318
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.3911,
+                    46.6386
+                ]
+            },
+            "properties": {
+                "pass_name": "White Pass",
+                "year": "2023-2024",
+                "snowfall": 240
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.5082,
+                    48.6013
+                ]
+            },
+            "properties": {
+                "pass_name": "Sherman Pass",
+                "year": "2023-2024",
+                "snowfall": 112
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.6216,
+                    47.3807
+                ]
+            },
+            "properties": {
+                "pass_name": "Blewett Pass",
+                "year": "2023-2024",
+                "snowfall": 120
+            }
+        }
+    ]
+}
